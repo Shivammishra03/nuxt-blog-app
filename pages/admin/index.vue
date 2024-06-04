@@ -7,7 +7,7 @@ import PostList from '~/components/posts/PostList.vue';
 <template>
     <div class="admin-page">
         <section class="new-post">
-            <button>Create Post</button>
+            <button @click="$router.push('/admin/new-post')">Create Post</button>
         </section>
         <section class="existing-posts">
             <h1>Existing Posts</h1>
