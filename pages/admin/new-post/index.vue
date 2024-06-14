@@ -1,23 +1,6 @@
 <script lang="ts" setup>
 import AdminPostForm from '~/components/admin/AdminPostForm.vue';
-import { ref ,} from 'vue';
 
-const router = useRouter();
-
-const editedPost = ref({
-    auther: '',
-    title: '',
-    thumbnailLink: '',
-    content: '',
-});
-
-const onSave = () => {
-    console.log("dfghh");
-};
-const onCancle = () => {
-    console.log("dfghh");
-    router.push('/admin');
-}
 </script>
 
 <template>
