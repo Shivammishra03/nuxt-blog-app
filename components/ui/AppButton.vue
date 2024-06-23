@@ -11,8 +11,7 @@
   <button
     class="button"
     :class="props.btnStyle"
-    v-bind="$attrs"
-    v-on="$listeners"><slot /></button>
+    v-bind="$attrs"><slot /></button>
 </template>
 
 <style scoped>

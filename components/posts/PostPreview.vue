@@ -4,6 +4,10 @@ const props = defineProps({
     type: String,
     required: true
   },
+  isAdmin: {
+    type: Boolean,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -18,10 +22,13 @@ const props = defineProps({
   },
 });
 
+const postLink = computed(()=> {
+  return props.isAdmin?'/admin/'+props.id: '/posts/'+ props.id;
+})
 </script>
 
 <template>
-    <NuxtLink :to="'/posts/' + props.id" class="post-preview">
+    <NuxtLink :to="postLink" class="post-preview">
         <article>
             <div class="post-thumbnail" :style="{backgroundImage: 'url('+ props.thumbnail +')'}"></div>
             <div class="post-content">

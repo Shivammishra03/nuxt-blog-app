@@ -4,11 +4,12 @@ const props = defineProps({
     type: String,
     default: 'input'
   },
-  value: {
+  modelValue: {
     type: String,
     default: ''
   }
 });
+const emit = defineEmits(['update:modelValue']);
 </script>
 
 <template>
@@ -17,13 +18,13 @@ const props = defineProps({
     <input
       v-if="props.controlType === 'input'"
       v-bind="$attrs"
-      :value="props.value"
-      @input="$emit('input', $event.target.value)">
+      :value="props.modelValue"
+      @input="$emit('update:modelValue', $event.target.value)">
     <textarea
       v-if="props.controlType === 'textarea'"
       rows="10"
-      :value="value"
-      @input="$emit('input', $event.target.value)"></textarea>
+      :value="props.modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"></textarea>
   </div>
 </template>
 

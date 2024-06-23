@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import AdminPostForm from '~/components/admin/AdminPostForm.vue';
 
+definePageMeta({
+  layout:'admin'
+});
+
 </script>
 
 <template>

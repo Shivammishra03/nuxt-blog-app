@@ -1,9 +1,18 @@
 <script lang="ts" setup>
-import { ref ,} from 'vue';
+import { ref } from 'vue';
+import AppButton from '../ui/AppButton.vue';
+import AppControlInput from '../ui/AppControlInput.vue';
 
 const router = useRouter();
 
-const editedPost = ref({
+const props = defineProps({
+    post: {
+        type: Object,
+        required: false
+    }
+});
+
+const editedPost = ref( props.post?{...props.post}:{
     auther: '',
     title: '',
     thumbnailLink: '',
@@ -11,7 +20,7 @@ const editedPost = ref({
 });
 
 const onSave = () => {
-    console.log("dfghh");
+    console.log("dfghh", editedPost.value);
 };
 const onCancle = () => {
     console.log("dfghh");
@@ -20,12 +29,12 @@ const onCancle = () => {
 </script>
 
 <template>
-    <form action="" @submit.prevent="onSave">
-        <UiAppControlInput v-model="editedPost.auther">Auther Name</UiAppControlInput>
-        <UiAppControlInput v-model="editedPost.title">Title</UiAppControlInput>
-        <UiAppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</UiAppControlInput>
-        <UiAppControlInput control-type="textarea" v-model="editedPost.content">Content</UiAppControlInput>
-        <UiAppButton type="submit">Save</UiAppButton>
-        <UiAppButton type="button" style="margin-left: 10px;" btn-style="cancel" @click="onCancle">Cancle</UiAppButton>
+    <form action="" @submit.prevent="onSave()">
+        <AppControlInput v-model="editedPost.auther">Auther Name</AppControlInput>
+        <AppControlInput v-model="editedPost.title">Title</AppControlInput>
+        <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
+        <AppControlInput control-type="textarea" v-model="editedPost.content">Content</AppControlInput>
+        <AppButton type="submit">Save</AppButton>
+        <AppButton type="button" style="margin-left: 10px;" btn-style="cancel" @click="onCancle()">Cancle</AppButton>
     </form>
 </template>

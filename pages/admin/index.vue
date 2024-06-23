@@ -1,5 +1,10 @@
 <script lang="ts" setup>
 import PostList from '~/components/posts/PostList.vue';
+import AppButton from '~/components/ui/AppButton.vue';
+
+definePageMeta({
+  layout:'admin'
+});
 
 
 </script>
@@ -7,11 +12,11 @@ import PostList from '~/components/posts/PostList.vue';
 <template>
     <div class="admin-page">
         <section class="new-post">
-            <button @click="$router.push('/admin/new-post')">Create Post</button>
+            <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
         </section>
         <section class="existing-posts">
             <h1>Existing Posts</h1>
-            <PostList/>
+            <PostList isAdmin/>
         </section>
     </div>
 </template>
