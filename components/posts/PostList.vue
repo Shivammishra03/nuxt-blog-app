@@ -11,13 +11,12 @@ const props = defineProps({
     required: true
   }
 })
-
 </script>
 
 <template>
-    <section class="posts-list">
-        <PostPreview v-for="postsItems in props.posts" :key="postsItems.id" :id="postsItems.id" :is-admin="props.isAdmin" :title="postsItems.title" :previewText="postsItems.previewText" :thumbnail="postsItems.thumbnail"/>
-    </section>
+  <section class="posts-list">
+    <PostPreview v-for="postsItems in props.posts" :key="postsItems.id" :id="postsItems.id" :is-admin="props.isAdmin" :title="postsItems.title" :previewText="postsItems.previewText" :thumbnail="postsItems.thumbnail"/>
+  </section>
 </template>
 
 <style scoped>

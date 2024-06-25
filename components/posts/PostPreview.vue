@@ -28,15 +28,15 @@ const postLink = computed(()=> {
 </script>
 
 <template>
-    <NuxtLink :to="postLink" class="post-preview">
-        <article>
-            <div class="post-thumbnail" :style="{backgroundImage: 'url('+ props.thumbnail +')'}"></div>
-            <div class="post-content">
-            <h1>{{  props.title }}</h1>
-            <p>{{ props.previewText }}</p>
-            </div>
-        </article>
-    </NuxtLink>
+  <NuxtLink :to="postLink" class="post-preview">
+    <article>
+      <div class="post-thumbnail" :style="{backgroundImage: 'url('+ props.thumbnail +')'}"></div>
+      <div class="post-content">
+        <h1>{{  props.title }}</h1>
+        <p>{{ props.previewText }}</p>
+      </div>
+    </article>
+  </NuxtLink>
 </template>
 
 <style scoped>
