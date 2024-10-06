@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import PostList from '~/components/posts/PostList.vue';
-import PostPreview from '~/components/posts/PostPreview.vue';
 
 const loadedPosts = ref([
   {
@@ -30,11 +29,6 @@ const loadedPosts = ref([
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <!-- <section class="featured-posts">
-      <PostPreview id="1" title="Hello Tech," previewText="This is my first post" thumbnail="https://images.unsplash.com/photo-1537884944318-390069bb8665?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-      <PostPreview id="2" title="Hello Tech," previewText="This is my second post" thumbnail="https://images.unsplash.com/photo-1537884944318-390069bb8665?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-      <PostPreview id="3" title="Hello Tech," previewText="This is my third post" thumbnail="https://images.unsplash.com/photo-1537884944318-390069bb8665?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-    </section> -->
     <PostList :posts="loadedPosts"/>
   </div>
 </template>
