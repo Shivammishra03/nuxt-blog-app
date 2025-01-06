@@ -15,7 +15,8 @@ const props = defineProps({
 
 <template>
   <section class="posts-list">
-    <PostPreview v-for="postsItems in props.posts" :key="postsItems.id" :id="postsItems.id" :is-admin="props.isAdmin" :title="postsItems.title" :previewText="postsItems.previewText" :thumbnail="postsItems.thumbnail"/>
+    <PostPreview v-for="postsItems in props.posts" :key="postsItems.id" :id="postsItems.id" :is-admin="props.isAdmin"
+      :title="postsItems.title" :previewText="postsItems.previewText" :thumbnail="postsItems.thumbnail" />
   </section>
 </template>
 

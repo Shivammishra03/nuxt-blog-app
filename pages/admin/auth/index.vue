@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import AppControlInput from '@/components/UI/AppControlInput.vue'
-import AppButton from '@/components/UI/AppButton';
 import { ref } from 'vue';
+import AppControlInput from '@/components/ui/AppControlInput.vue'
+import AppButton from '@/components/ui/AppButton.vue';
 
 definePageMeta({
   layout:'admin'
