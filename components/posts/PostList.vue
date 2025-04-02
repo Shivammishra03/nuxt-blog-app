@@ -1,16 +1,23 @@
 <script lang="ts" setup>
 import PostPreview from '~/components/posts/PostPreview.vue';
 
+interface Post {
+  id: string;
+  title: string;
+  previewText: string;
+  thumbnail: string;
+}
+
 const props = defineProps({
   isAdmin: {
     type: Boolean,
     default: false
   },
   posts: {
-    type: Array,
+    type: Array as PropType<Post[]>,
     required: true
   }
-})
+});
 </script>
 
 <template>
